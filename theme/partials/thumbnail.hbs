@@ -45,6 +45,7 @@
             src="{{relative urls.small}}"
             width="{{multiply 300 (aspect meta.width meta.height)}}"
             height="300"
+            loading="lazy"
           {{~#if @root.settings.hideExtension~}}
               alt="{{remove_extension filename}}"
           {{~else~}}
@@ -55,7 +56,7 @@
 
     {{#compare meta.animated "||" isVideo}}
         <div class="video-overlay">
-            <img src="{{relative 'public/play.png'}}" />
+            <img src="{{relative 'public/play.png'}}" loading="lazy"/>
         </div>
     {{/compare}}
 </div>
